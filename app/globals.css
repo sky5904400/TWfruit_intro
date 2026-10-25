@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/* 懷舊色票：老招牌紅、郵筒綠、鵝黃、磁磚藍、泛黃紙、墨色 */
+:root {
+  --paper: #f4ead5;
+  --paper-deep: #e9d9b6;
+  --ink: #2b1e16;
+  --ink-soft: #5a4636;
+  --retro-red: #c8262e;
+  --retro-red-deep: #8f1a20;
+  --retro-green: #1f5e3b;
+  --retro-yellow: #f2c14e;
+  --retro-blue: #3e7cb1;
+  --retro-pink: #e98a9a;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-retro-red: var(--retro-red);
+  --color-retro-red-deep: var(--retro-red-deep);
+  --color-retro-green: var(--retro-green);
+  --color-retro-yellow: var(--retro-yellow);
+  --color-retro-blue: var(--retro-blue);
+  --color-retro-pink: var(--retro-pink);
+  --font-sign: var(--font-sign), "Noto Serif TC", serif;
+  --font-hand: var(--font-hand), "LXGW WenKai TC", serif;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-hand), "LXGW WenKai TC", serif;
+}
+
+/* 泛黃紙張的細顆粒 */
+.paper-grain {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(rgba(43, 30, 22, 0.06) 1px, transparent 1px),
+    radial-gradient(rgba(43, 30, 22, 0.04) 1px, transparent 1px);
+  background-size: 7px 7px, 13px 13px;
+  background-position: 0 0, 3px 5px;
+}
+
+/* 台灣大花布：紅底牡丹 + 綠葉 */
+.hua-bu {
+  background-color: var(--retro-red);
+  background-image:
+    radial-gradient(circle at 50% 50%, #f7d1d8 0 9%, #e98a9a 10% 17%, #ffffff 18% 21%, transparent 22%),
+    radial-gradient(circle at 50% 50%, var(--retro-yellow) 0 4%, transparent 5%),
+    radial-gradient(ellipse 14% 7% at 30% 30%, var(--retro-green) 0 90%, transparent 100%),
+    radial-gradient(ellipse 7% 14% at 70% 72%, var(--retro-green) 0 90%, transparent 100%),
+    radial-gradient(circle at 50% 50%, #f7d1d8 0 9%, #e98a9a 10% 17%, #ffffff 18% 21%, transparent 22%),
+    radial-gradient(circle at 50% 50%, var(--retro-yellow) 0 4%, transparent 5%);
+  background-size: 160px 160px;
+  background-position: 0 0, 0 0, 0 0, 0 0, 80px 80px, 80px 80px;
+}
+
+/* 鐵窗花 */
+.tie-chuang {
+  background-color: var(--retro-green);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23f4ead5' stroke-opacity='.55' stroke-width='2'%3E%3Crect x='1' y='1' width='46' height='46'/%3E%3Cpath d='M24 1v46M1 24h46'/%3E%3Ccircle cx='24' cy='24' r='8'/%3E%3Cpath d='M12 12c6 0 6 6 12 6M36 12c-6 0-6 6-12 6M12 36c6 0 6-6 12-6M36 36c-6 0-6-6-12-6'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 48px 48px;
+}
+
+/* 磨石子地板 */
+.mo-shi-zi {
+  background-color: #d9d2c3;
+  background-image:
+    radial-gradient(circle, #8a8170 0 1.5px, transparent 2px),
+    radial-gradient(circle, #f4ead5 0 2px, transparent 2.5px),
+    radial-gradient(circle, #b5523b 0 1px, transparent 1.5px),
+    radial-gradient(circle, #5f6b5a 0 1.5px, transparent 2px);
+  background-size: 23px 19px, 31px 27px, 17px 29px, 41px 37px;
+  background-position: 0 0, 7px 11px, 13px 3px, 21px 17px;
+}
+
+/* 跑馬燈 */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 30s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* 搖籤筒 */
+@keyframes shake {
+  0%, 100% { transform: rotate(0); }
+  20% { transform: rotate(-10deg); }
+  40% { transform: rotate(8deg); }
+  60% { transform: rotate(-6deg); }
+  80% { transform: rotate(4deg); }
+}
+.shake {
+  animation: shake 0.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .shake { animation: none; }
+}
+
+/* 台鐵名片式車票的齒孔邊 */
+.ticket-edge {
+  -webkit-mask: radial-gradient(circle 6px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 6px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+  mask: radial-gradient(circle 6px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 6px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+}
+
+/* 印章感的歪斜 */
+.stamp {
+  transform: rotate(-8deg);
+  box-shadow: inset 0 0 0 3px currentColor, inset 0 0 0 6px transparent, inset 0 0 0 7px currentColor;
+}
