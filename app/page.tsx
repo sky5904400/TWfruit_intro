@@ -119,7 +119,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-6xl flex-col items-center px-4 py-20 sm:py-28">
           <div className="relative w-full max-w-2xl border-4 border-ink bg-paper px-6 py-10 text-center shadow-[10px_10px_0_var(--ink)] sm:px-12">
             <span className="absolute -top-5 left-1/2 -translate-x-1/2 rounded-full border-2 border-ink bg-retro-yellow px-5 py-1 font-sign text-sm font-bold tracking-[0.4em]">
-              真正港台灣味
+              正港台灣味
             </span>
             <WelcomeGreeting />
             <p className="mb-4 text-lg tracking-[0.3em] text-ink-soft">
