@@ -7,7 +7,7 @@ import WelcomeGreeting from "@/components/WelcomeGreeting";
 const fruits = [
   {
     img: "/fruits/mango.jpg",
-    name: "超級愛文芒果",
+    name: "愛文芒果",
     taigi: "suāinn-á",
     origin: "台南玉井・屏東枋山",
     season: "5–8 月",
